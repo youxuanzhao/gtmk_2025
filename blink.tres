@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dayydq43hkdfv"]
+
+[ext_resource type="Shader" uid="uid://cj8sf8ts3gwfw" path="res://shaders/blink.gdshader" id="1_tm56u"]
+
+[resource]
+shader = ExtResource("1_tm56u")
+shader_parameter/flash_color = Vector4(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
