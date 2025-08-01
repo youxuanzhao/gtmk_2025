@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ii58d0bddpb4"]
+[gd_scene load_steps=10 format=3 uid="uid://ii58d0bddpb4"]
 
 [ext_resource type="Script" uid="uid://crh6xvxi0ancv" path="res://scripts/game_manager.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://b4agdsvewyrno" path="res://assets/placeholder-Sheet.png" id="1_wtcfe"]
@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://d2vktqge3vl6c" path="res://scripts/track_manager.gd" id="5_rj586"]
 [ext_resource type="Script" uid="uid://b77m2iwkaeckq" path="res://scripts/available_unit.gd" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://branq3g1xokfi" path="res://icon.svg" id="7_d21ai"]
+[ext_resource type="Texture2D" uid="uid://l2dw2nq2tld4" path="res://indicate_ph.png" id="7_rj586"]
+[ext_resource type="Material" uid="uid://cl4up3pl63a82" path="res://circular_transition.tres" id="8_rj586"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4d7sh"]
+radius = 8.0
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_0e48y")
@@ -67,9 +72,9 @@ script = ExtResource("5_rj586")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 2
-offset_left = 412.0
+offset_left = 416.0
 offset_top = 499.0
-offset_right = 540.0
+offset_right = 544.0
 offset_bottom = 539.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer"]
@@ -89,3 +94,29 @@ layout_mode = 2
 texture = ExtResource("7_d21ai")
 expand_mode = 2
 script = ExtResource("6_kdubu")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(-162, -98)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_4d7sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("7_rj586")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+material = ExtResource("8_rj586")
+anchors_preset = -1
+anchor_bottom = -0.0333333
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 479.0
+offset_bottom = 289.0
+color = Color(0.932159, 0.786724, 0.989609, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2"]

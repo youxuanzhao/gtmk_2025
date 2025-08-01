@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if is_dragging and indicator:
 		var mouse_pos = get_local_mouse_position()
 		indicator.position = mouse_pos  # Center the unit under the mouse cursor
-		print(indicator.position)
+		# print(indicator.position)
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			is_dragging = false
 			dropped.emit()  # Emit the dropped signal when dragging stops

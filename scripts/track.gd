@@ -75,5 +75,5 @@ func on_timer_timeout() -> void:
 			i.has_triggered = false  # Reset the trigger state for all units
 	# This function is called when the timer reaches zero.
 	# You can implement logic here to handle what happens when the track completes.
-	print("Track completed!")
+	# print("Track completed!")
 	# For example, you might want to trigger an event or update the UI.

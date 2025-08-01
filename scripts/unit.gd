@@ -29,4 +29,5 @@ func _on_mouse_exit() -> void:
 func _effect() -> void:
 	# This function can be used to apply effects or actions when the track unit is activated.
 	# For example, you might want to change the texture or trigger an animation.
-	print("track effect")
+	# print("track effect")
+	pass
